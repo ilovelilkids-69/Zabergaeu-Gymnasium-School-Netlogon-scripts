@@ -1,0 +1,1 @@
+xcopy /Y /I "P:\Install\Firefox\distribution" "C:\Program Files\Mozilla Firefox\distribution"

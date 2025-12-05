@@ -1,0 +1,26 @@
+Eigene Anmeldeskripte
+---------------------
+
+Bei der Anmeldung wird geprüft, ob es eigene Anmeldeskripte gibt
+und diese zusätzlich aufgerufen.
+
+Der Ablauf ist hierbei wie folgt:
+
+  1. Gibt es \\server\netlogon\role_%ROLE%.bat, wird dieses
+     ausgeführt. %ROLE% ist hierbei die Benutzerrolle, also
+     student, teacher, course oder admin.
+
+  2. Gibt es \\server\netlogon\group_%GROUP%.bat, wird dieses
+     ausgeführt. Für %GROUP% werden hierbei nacheinander alle
+     Gruppen eingesetzt, in denen der Benutzer Mitglied ist.
+
+  3. Gibt es \\server\netlogon\user_%USER%.bat, wird dieses
+     ausgeführt. %USER% ist hierbei der Benutzername des
+     angemeldeten Benutzers.
+
+
+!!! Wichtig !!!
+
+Bitte beachten Sie, dass Skripte nur ausgeführt werden können,
+wenn diese DOS-Zeilenenden besitzen (CRLF). Am Server können
+Sie das durch Aufruf von "flip -b -m skript.bat" sicherstellen.
